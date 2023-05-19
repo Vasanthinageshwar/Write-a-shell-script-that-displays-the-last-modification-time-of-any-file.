@@ -1,0 +1,9 @@
+#!/bin/sh
+echo -n "Enter filename to see its last modification time :"
+read f
+if [ ! -f $f ]
+then
+	echo "$f file doesn't exist"
+	exit 1
+fi
+echo "$f was last modified on $(stat -c  %x $f)"
